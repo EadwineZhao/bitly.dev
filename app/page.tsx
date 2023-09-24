@@ -1,11 +1,11 @@
-import { cn } from "@/lib/utils";
-import clsx from "clsx";
-import Image from "next/image";
-import { HTMLProps, Suspense } from "react";
-import Icons from "./components/icons";
-import Loading from "./components/loading";
-import { getViewsCount } from "@/lib/metrics";
-import ViewCounter from "./blog/view-counter";
+import { cn } from "@/lib/utils"
+import clsx from "clsx"
+import Image from "next/image"
+import { HTMLProps, Suspense } from "react"
+import Icons from "./components/icons"
+import Loading from "./components/loading"
+import { getViewsCount } from "@/lib/metrics"
+import ViewCounter from "./blog/view-counter"
 
 const H1 = (props: HTMLProps<HTMLHeadingElement>) => (
   <h1
@@ -15,13 +15,13 @@ const H1 = (props: HTMLProps<HTMLHeadingElement>) => (
       props.className
     )}
   />
-);
+)
 const Text = (props: HTMLProps<HTMLParagraphElement>) => (
   <p
     {...props}
     className={cn("prose prose-neutral dark:prose-invert", props.className)}
   />
-);
+)
 
 const Badge = (props: HTMLProps<HTMLAnchorElement>) => (
   <a
@@ -29,12 +29,12 @@ const Badge = (props: HTMLProps<HTMLAnchorElement>) => (
     target="_blank"
     className="border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 rounded p-1 text-sm inline-flex items-center leading-4 text-neutral-900 dark:text-neutral-100 no-underline"
   />
-);
+)
 
 const BlogLink = async ({ slug, name }: { slug: string; name: string }) => {
-  const allViews = await getViewsCount();
+  const allViews = await getViewsCount()
 
-  console.log(allViews);
+  console.log(allViews)
   return (
     <a
       href={`/blog/${slug}`}
@@ -50,14 +50,14 @@ const BlogLink = async ({ slug, name }: { slug: string; name: string }) => {
         <Icons.arrow />
       </div>
     </a>
-  );
-};
+  )
+}
 
 export default function HomePage() {
   return (
     <section>
       <div className="my-8">
-        <H1>hey, I'm Ed.</H1>
+        <H1>{`hey, I'm Ed.`}</H1>
         <Text>
           {`I'm a frontend developer, optimist, and community builder. I currently
         work as the VP of Developer Experience at `}
@@ -81,29 +81,20 @@ export default function HomePage() {
           .
         </Text>
         <Text>
-          Over the past decade, I've written content on my blog and newsletter.
+          {/* {`Over the past decade, I've written content on my blog and newsletter.
           I try to keep things simple. You'll find writing about technologies
           I'm interested in at the time, or how I'm learning and growing in my
-          career, sharing knowledge along the way.
+          career, sharing knowledge along the way.`} */}
         </Text>
       </div>
       <div className="my-8 flex flex-col space-y-4 w-full">
         <Suspense fallback={<Loading />}>
           <BlogLink
-            name="What Makes A Great Developer Experience?"
-            slug={`dasdfasdf`}
+            name="React: Exploring Front-End Power via Core Concentps"
+            slug="2020-react"
           />
-          <BlogLink
-            name="What Makes A Great Developer Experience?"
-            slug="developer-experience-examples"
-          />
-          <BlogLink
-            name="2023 State of Databases for Serverless & Edge"
-            slug="backend"
-          />
-          <BlogLink name="The Story of Heroku" slug="heroku" />
         </Suspense>
       </div>
     </section>
-  );
+  )
 }
