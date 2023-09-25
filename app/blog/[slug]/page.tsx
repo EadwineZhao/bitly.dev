@@ -47,7 +47,7 @@ export async function generateMetadata(
         {
           url: ogImage,
         },
-        ...previousImages,
+        // ...previousImages,
       ],
     },
     twitter: {
