@@ -1,8 +1,8 @@
-import { defineDocumentType, makeSource } from "contentlayer/source-files";
-import remarkGfm from "remark-gfm";
-import rehypePrettyCode from "rehype-pretty-code";
-import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import { defineDocumentType, makeSource } from "contentlayer/source-files"
+import remarkGfm from "remark-gfm"
+import rehypePrettyCode from "rehype-pretty-code"
+import rehypeSlug from "rehype-slug"
+import rehypeAutolinkHeadings from "rehype-autolink-headings"
 
 export const Blog = defineDocumentType(() => ({
   name: "Blog",
@@ -24,9 +24,9 @@ export const Blog = defineDocumentType(() => ({
       resolve: (doc) => {
         const tweetMatches = doc.body.raw.match(
           /<StaticTweet\sid="[0-9]+"\s\/>/g
-        );
+        )
         //@ts-ignore
-        return tweetMatches?.map((tweet) => tweet.match(/[0-9]+/g)[0]) || [];
+        return tweetMatches?.map((tweet) => tweet.match(/[0-9]+/g)[0]) || []
       },
     },
     structuredData: {
@@ -45,11 +45,12 @@ export const Blog = defineDocumentType(() => ({
         author: {
           "@type": "Person",
           name: "Ed Zhao",
+          url: "https://bitly.dev",
         },
       }),
     },
   },
-}));
+}))
 
 export default makeSource({
   contentDirPath: "content",
@@ -68,16 +69,16 @@ export default makeSource({
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
             // lines to be copy/pasted
             if (node.children.length === 0) {
-              node.children = [{ type: "text", value: " " }];
+              node.children = [{ type: "text", value: " " }]
             }
           },
           //@ts-ignore
           onVisitHighlightedLine(node) {
-            node.properties.className.push("line--highlighted");
+            node.properties.className.push("line--highlighted")
           },
           //@ts-ignore
           onVisitHighlightedWord(node) {
-            node.properties.className = ["word--highlighted"];
+            node.properties.className = ["word--highlighted"]
           },
         },
       ],
@@ -91,4 +92,4 @@ export default makeSource({
       ],
     ],
   },
-});
+})
