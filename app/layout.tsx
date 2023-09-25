@@ -1,8 +1,8 @@
-import { Metadata } from "next";
-import "./globals.css";
-import localFont from "next/font/local";
-import clsx from "clsx";
-import Navbar from "./components/sidebar";
+import { Metadata } from "next"
+import "./globals.css"
+import localFont from "next/font/local"
+import clsx from "clsx"
+import Navbar from "./components/sidebar"
 const graphik = localFont({
   src: [
     {
@@ -18,7 +18,7 @@ const graphik = localFont({
   ],
   variable: "--font-graphik",
   display: "swap",
-});
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bitly.dev"),
@@ -54,12 +54,12 @@ export const metadata: Metadata = {
     google: "wc5CTcOtpnEg95bqhClX8p4U52UmKFTqZjWm0ePCMoU",
     yandex: "",
   },
-};
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html
@@ -76,5 +76,5 @@ export default function RootLayout({
         </main>
       </body>
     </html>
-  );
+  )
 }
