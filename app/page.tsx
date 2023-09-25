@@ -34,7 +34,6 @@ const Badge = (props: HTMLProps<HTMLAnchorElement>) => (
 const BlogLink = async ({ slug, name }: { slug: string; name: string }) => {
   const allViews = await getViewsCount()
 
-  console.log(allViews)
   return (
     <a
       href={`/blog/${slug}`}
