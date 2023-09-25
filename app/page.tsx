@@ -59,33 +59,33 @@ export default function HomePage() {
       <div className="my-8">
         <H1>{`hey, I'm Ed.`}</H1>
         <Text>
-          {`I'm a frontend developer, optimist, and community builder. I currently
-        work as the VP of Developer Experience at `}
+          {`I began my journey in technology as a system engineer, and my passion for programming led me to transition into web development in 2019. I specialize in building modern web applications using technologies such as `}
           <span className="not-prose">
-            <Badge href="https://vercel.com">
+            <Badge href="https://react.dev">
+              <Icons.react />
+              React
+            </Badge>
+            {/* <Badge href="https://vercel.com">
               <Icons.nextjs />
               Vercel
+            </Badge> */}
+          </span>
+          <span className="not-prose">
+            ,
+            <Badge href="https://nextjs.org">
+              <Icons.nextjs />
+              Next.js
             </Badge>
           </span>
-          {`, where I lead the
-        community for `}
-          <Badge href="https://nextjs.org">
-            <Icons.nextjs />
-            Next.js
-          </Badge>
-          {`, an open-source web framework built with `}
-          <Badge href="https://react.dev">
-            <Icons.react />
-            React
-          </Badge>
-          .
+          {`, GraphQL, MongoDB, and Prisma. I'm dedicated to creating elegant and
+          efficient solutions that enhance user experiences.`}
         </Text>
-        <Text>
-          {/* {`Over the past decade, I've written content on my blog and newsletter.
-          I try to keep things simple. You'll find writing about technologies
-          I'm interested in at the time, or how I'm learning and growing in my
-          career, sharing knowledge along the way.`} */}
+        <Text className="my-8">
+          {`As a web developer, I play a key role in designing and developing web applications that meet clients' needs. My responsibilities include frontend development using React and Next.js, as well as backend development utilizing GraphQL, MongoDB, and Prisma.`}
         </Text>
+      </div>
+      <div>
+        <Text>{`I've been sharing my journey, experiences, and insights on my blog over the past five years. Here are some of the topics I've covered.`}</Text>
       </div>
       <div className="my-8 flex flex-col space-y-4 w-full">
         <Suspense fallback={<Loading />}>
@@ -94,6 +94,9 @@ export default function HomePage() {
             slug="2020-react"
           />
         </Suspense>
+      </div>
+      <div>
+        {`Outside of programming, I love hiking, traveling, and cherishing moments with my son. These pursuits inspire my work-life balance and creativity.`}
       </div>
     </section>
   )

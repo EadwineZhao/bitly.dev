@@ -1,13 +1,16 @@
-import { ImageResponse, NextRequest } from "next/server";
+import { ImageResponse, NextRequest } from "next/server"
+
+export const runtime = "edge"
 
 export async function GET(req: NextRequest) {
-  const { searchParams } = req.nextUrl;
-  const postTitle = searchParams.get("title");
-  const font = fetch(
-    new URL("../../public/fonts/kaisei-tokumin-bold.ttf", import.meta.url)
-  ).then((res) => res.arrayBuffer());
-  const fontData = await font;
-
+  const { searchParams } = req.nextUrl
+  const postTitle = searchParams.get("title")
+  const fontUrl = new URL(
+    "../../public/fonts/kaisei-tokumin-bold.ttf",
+    import.meta.url
+  )
+  const font = fetch(fontUrl).then((res) => res.arrayBuffer())
+  const fontData = await font
   return new ImageResponse(
     (
       <div
@@ -50,5 +53,5 @@ export async function GET(req: NextRequest) {
         },
       ],
     }
-  );
+  )
 }
