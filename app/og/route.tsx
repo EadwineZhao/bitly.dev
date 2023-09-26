@@ -1,15 +1,14 @@
-import { ImageResponse, NextRequest } from "next/server"
+import { ImageResponse } from "next/server"
+import { NextRequest } from "next/server"
 
 export const runtime = "edge"
 
 export async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl
   const postTitle = searchParams.get("title")
-  const fontUrl = new URL(
-    "../../public/fonts/kaisei-tokumin-bold.ttf",
-    import.meta.url
-  )
-  const font = fetch(fontUrl).then((res) => res.arrayBuffer())
+  const font = fetch(
+    new URL("../../public/fonts/kaisei-tokumin-bold.ttf", import.meta.url)
+  ).then((res) => res.arrayBuffer())
   const fontData = await font
   return new ImageResponse(
     (
@@ -21,7 +20,7 @@ export async function GET(req: NextRequest) {
           flexDirection: "column",
           alignItems: "flex-start",
           justifyContent: "center",
-          backgroundImage: "url(https://bitly.dev/og-bg.jpg)",
+          backgroundImage: "url(https://bitly.dev/og-bg-1280.png)",
         }}
       >
         <div
@@ -43,8 +42,8 @@ export async function GET(req: NextRequest) {
       </div>
     ),
     {
-      width: 1920,
-      height: 1080,
+      width: 1280,
+      height: 720,
       fonts: [
         {
           name: "Kaisei Tokumin",
