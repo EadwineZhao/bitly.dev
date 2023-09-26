@@ -20,7 +20,7 @@ export async function GET(req: NextRequest) {
           flexDirection: "column",
           alignItems: "flex-start",
           justifyContent: "center",
-          backgroundImage: "url(https://bitly.dev/og-bg-1280.png)",
+          backgroundImage: "url(https://bitly.dev/og-bg.jpg)",
         }}
       >
         <div
@@ -42,8 +42,8 @@ export async function GET(req: NextRequest) {
       </div>
     ),
     {
-      width: 1280,
-      height: 720,
+      width: 1920,
+      height: 1080,
       fonts: [
         {
           name: "Kaisei Tokumin",
