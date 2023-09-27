@@ -44,9 +44,10 @@ export async function generateMetadata(
       publishedTime,
       url: `https://bitly.dev/blog/${slug}`,
       images: [
-        {
-          url: ogImage,
-        },
+        ogImage,
+        // {
+        //   url: ogImage,
+        // },
         // ...previousImages,
       ],
     },

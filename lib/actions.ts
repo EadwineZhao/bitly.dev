@@ -53,7 +53,7 @@ export async function saveGuestbookEntry(formData: FormData) {
     },
     body: JSON.stringify({
       from: "guestbook@bitly.dev",
-      to: "eadwinezhao@gmail.com",
+      to: "ed@bitly.dev",
       subject: "New Guestbook Entry",
       html: `<p>Email: ${email}</p><p>Message: ${body}</p>`,
     }),
