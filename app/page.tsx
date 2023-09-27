@@ -6,6 +6,7 @@ import Icons from "./components/icons"
 import Loading from "./components/loading"
 import { getViewsCount } from "@/lib/metrics"
 import ViewCounter from "./blog/view-counter"
+import Link from "next/link"
 
 const H1 = (props: HTMLProps<HTMLHeadingElement>) => (
   <h1
@@ -97,6 +98,29 @@ export default function HomePage() {
       <div>
         {`Outside of programming, I love hiking, traveling, and cherishing moments with my son. These pursuits inspire my work-life balance and creativity.`}
       </div>
+      <ul className="flex flex-col md:flex-row mt-8 space-x-0 md:space-x-4 space-y-2 md:space-y-0 font-sm text-neutral-600 dark:text-neutral-300">
+        {/* <li>
+          <a
+            className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://twitter.com/leeerob"
+          >
+            <Icons.arrow />
+            <p className="h-7 ml-2">follow me</p>
+          </a>
+        </li> */}
+        <li>
+          <Link
+            href={"mailto:ed@bitly.dev"}
+            className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
+            target="_blank"
+          >
+            <Icons.arrow />
+            <p className="h-7 ml-2">send me an email</p>
+          </Link>
+        </li>
+      </ul>
     </section>
   )
 }
